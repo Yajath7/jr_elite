@@ -179,4 +179,4 @@ def load_and_clean_data():
     
     headers = ["S.No", "Plot", "Name", "2020-2021", "2022-2023", "2023-2024", "2024-2025", "2025-2026", "2026-2027", "Total"]
     
-    for line in lines:
+     line in lines:
