@@ -1,8 +1,7 @@
 import pandas as pd
 import streamlit as st
-import io
 
-# 1. Raw Dataset Embedded directly into the application
+# Raw Dataset Embedded directly into the application
 raw_data = """S.No,Plot,Name,2020-2021,2022-2023,2023-2024,2024-2025,2025-2026,2026-2027,Total
 1,1,Prakash (Anjanadri),0,10000,10000,10500,11000,,
 2,2,Vinay kumar,1000,10000,9500,10500,10500,10500,52000
@@ -172,11 +171,10 @@ raw_data = """S.No,Plot,Name,2020-2021,2022-2023,2023-2024,2024-2025,2025-2026,2
 165,165,Venkat Tulluru,1000,10000,9500,10500,10500,5000,46500
 166,166,Basava Raju,1000,10000,10000,10500,10500,10500,52500"""
 
-@st.cache_data
 def load_and_clean_data():
     lines = raw_data.strip().split("\n")
     processed_rows = []
-    
     headers = ["S.No", "Plot", "Name", "2020-2021", "2022-2023", "2023-2024", "2024-2025", "2025-2026", "2026-2027", "Total"]
     
-     line in lines:
+    for line in lines:
+        if "S.No,Plot,Name" in line:
